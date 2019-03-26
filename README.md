@@ -1,3 +1,5 @@
+## List of Codility tasks and their problem description
+
 ### Binary Gap
 
 A  _binary gap_  within a positive integer N is any maximal sequence of consecutive zeros that is surrounded by ones at both ends in the binary representation of N.
