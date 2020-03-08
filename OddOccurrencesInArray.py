@@ -1,12 +1,13 @@
+from collections import Counter
 
 
 def solution(A):
-    for elem in A:
-        if A.count(elem) % 2 != 0:
-            return elem
-    return -1
-
-
-if __name__ == '__main__':
-    A = [9, 3, 9, 3, 9, 7, 9]
-    print solution(A)
+    """
+    Return the number of the unpaired element.
+    :param A: array of integers containing an odd number
+    :return: the value of the unpaired element
+    """
+    for item, times in Counter(A).items():
+        if times%2:
+            return item
+    return
