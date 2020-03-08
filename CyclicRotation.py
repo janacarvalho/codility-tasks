@@ -1,11 +1,12 @@
 def solution(A, K):
-    list_size = len(A)
-
-    if list_size < 2 or K == list_size:
+    """
+    Rotate an array A K times to the right
+    :param A: array to be rotate
+    :param K: the number to times
+    :return: array rotate K times to the right
+    """
+    size = len(A)
+    if K == size or size <= 1 or K % size == 0:
         return A
-
-    B = [0] * list_size
-    for i in range(list_size):
-        B[(i+K)%list_size] = A[i]
-    return B
-
+    index = size - K if K < size else size - K%size
+    return (A[index:] + A[:index])
