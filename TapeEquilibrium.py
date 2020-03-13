@@ -1,15 +1,13 @@
-
-
 def solution(A):
-    a_size = len(A)
-    all_sums = []
-    for P in range(1, a_size):
-        part1 = A[0:P]
-        part2 = A[P:]
-        res = abs(sum(part1) - sum(part2))
-        all_sums.append(res)
-    return min(all_sums)
-
-
-A = [3, 1, 2, 4, 3]
-solution(A)
+    """
+    Calculate the difference between the two parts and return the minimal difference.
+    :param A: array of N integers
+    :return: the absolute difference between the sum of the first and last part.
+    """
+    s = sum(A)
+    m = float('inf')
+    left_sum = 0
+    for n in A[:-1]:
+        left_sum += n
+        m = min(abs(2*left_sum - s), m)
+    return m
